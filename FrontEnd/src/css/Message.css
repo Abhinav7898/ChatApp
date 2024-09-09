@@ -1,0 +1,73 @@
+.message-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 48%;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .message-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .logo {
+    border-radius: 50%;
+    background-color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .message-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+  }
+  
+  .user-name {
+    font-size: large;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .message-date {
+    font-size: small;
+    color: gray;
+  }
+  
+  .message {
+    word-break: break-word;
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .send {
+    align-self: flex-end;
+    text-align: right;
+  }
+  
+  .send .message-container {
+    justify-content: flex-end;
+  }
+  
+  .receive {
+    align-self: flex-start;
+    text-align: left;
+  }
+  
+  .receive .message-container {
+    justify-content: flex-start;
+  }
+  
