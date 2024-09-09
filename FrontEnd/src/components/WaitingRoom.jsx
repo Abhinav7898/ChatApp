@@ -23,7 +23,7 @@ export default function WaitingRoom({ setConnection, setRoomId }) {
 
     // Connect to SignalR
     const conn = new HubConnectionBuilder()
-      .withUrl("https://localhost:7272/chatHub")
+      .withUrl("https://abhinavjain.bsite.net/chatHub")
       .configureLogging(LogLevel.Information)
       .build();
 
