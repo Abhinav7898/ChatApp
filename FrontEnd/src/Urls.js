@@ -1,2 +1,2 @@
-const ApiURL = "https://localhost:7272/chatHub";
+const ApiURL = "https://abhinavjain.bsite.net/chatHub";
 export default ApiURL;
