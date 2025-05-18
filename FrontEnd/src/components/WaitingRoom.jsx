@@ -23,23 +23,29 @@ export default function WaitingRoom({ setConnection, setRoomId }) {
 
     // Connect to SignalR
     const conn = new HubConnectionBuilder()
-      .withUrl("https://abhinavjain.bsite.net/chatHub")
+      .withUrl("https://localhost:7130/Chat")
       .configureLogging(LogLevel.Information)
+      .withAutomaticReconnect()
       .build();
 
     try {
       await conn.start();
       console.log("Connected to SignalR");
 
-      // Join the chat room
-      const initials = `${firstName[0]}${lastName[0]}`.toUpperCase();
-      await conn.invoke("JoinChat", fullName, `${fullName} joined the chat`);
+      const userConnection = {
+        userName: fullName,
+        chatRoom: chatRoom
+      };
 
+      // Join the specific chat room
+      await conn.invoke("JoinSpecificChatRoom", userConnection);
+      console.log("Joined chat room:", chatRoom);
+      
       setConnection(conn);
-      setRoomId(chatRoom);  // Set the room ID
+      setRoomId(chatRoom);
       navigate("/chatRoom");
     } catch (ex) {
-      console.log(ex);
+      console.error("Error connecting to SignalR:", ex);
     }
   };
 

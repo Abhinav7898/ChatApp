@@ -23,7 +23,17 @@ function App() {
         />
         <Route
           path="/chatRoom"
-          element={connection ? <ChatRoom connection={connection} roomId={roomId} /> : <Navigate to="/" />}
+          element={
+            connection ? (
+              <ChatRoom 
+                connection={connection} 
+                setConnection={setConnection}
+                roomId={roomId} 
+              />
+            ) : (
+              <Navigate to="/" />
+            )
+          }
         />
       </Routes>
     </Router>
